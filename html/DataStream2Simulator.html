@@ -1,0 +1,126 @@
+<html>
+
+<head>
+  <title>DataStream2 Emulator</title>
+  <style>
+    .main {
+      text-align: center;
+      width: 600px;
+      align-items: center;
+      align-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .banner {
+      font-size: 24pt;
+    }
+
+    .explanation {
+      font-size: smaller;
+    }
+
+    .form {
+      font-size: medium;
+      border: 3px;
+      border-style: solid;
+      border-color: aqua;
+      width: 590px;
+    }
+
+    .label {
+      font-size: 14pt;
+    }
+
+    .inputrow {
+      padding: 5px;
+    }
+
+    .inputbox {
+      font-size: smaller;
+      width: 250px;
+    }
+
+    .button {
+      background-color: aquamarine;
+      border-style: solid;
+      border-width: 2pt;
+      width: fit-content;
+      padding: 2pt;
+      border-radius: 5pt;
+    }
+
+    .response_text {
+      font-size: x-small;
+    }
+  </style>
+  <script>
+    function sendXHRGet(url, responseTextCell) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById(responseTextCell).innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", url);
+      xhttp.send();
+    }
+
+    function sendBulkInfo() {
+      console.log("InSend Bulk Info");
+      emptyValues=false;
+      hostname = document.domain;
+      if (hostname.length == 0) { hostname = "139-144-28-179.ip.linodeusercontent.com";} //During tesing use my tesing server
+      elasticHostname=document.getElementById("elastic_hostname").value;
+      if (elasticHostname.length==0){flashIt("elastic_hostname");emptyValues=true;}
+      username=document.getElementById("elastic_username").value;
+      if (username.length==0){flashIt("elastic_username");emptyValues=true;}
+      password=document.getElementById("elastic_password").value;
+      if (password.length==0){flashIt("elastic_password"); emptyValues=true;}
+      numRecords=document.getElementById("num_records").value;
+      if (numRecords.length==0){flashIt("numRecords");emptyValues=true;}
+      url="https://"+hostname+"/py/sendBulkDSData.py";
+      console.log("URL is: "+url);
+      const queryString=`elastichostname=${elasticHostname}&username=${username}&password=${password}&numrecords=${numRecords}`;
+      const postBody={hostname:hostname,username:username,password:password,numRecords:numRecords};
+      //console.log(postBody);
+      if(!emptyValues){sendXHRGet(url+"?"+queryString,"responseTextCell")} //If none of the values were empty, send the request.
+
+    }
+
+    function flashIt(elementID) { 
+    myElement = document.getElementById(elementID); 
+    myElement.style.backgroundColor = 'red'; 
+    myElement.style.backgroundColor = 'white';
+    myElement.style.backgroundColor = 'red'; 
+    myElement.style.backgroundColor = 'green';  }
+  </script>
+</head>
+
+<body>
+  <div class="main">
+    <div class="banner">DataStream2 Loader</div>
+    <div class="explanation">
+      This form will allow you to send data to your elastic instance to
+      simulate the type of data that Akamai will send when DataStream 2 is
+      enabled
+    </div>
+    <div class="form">
+      <div class="inputrow">
+        <span class="label">Elastic rDNS: </span><input class="inputbox" id="elastic_hostname"
+          placeholder="Hostname (rDNS) of your elastic server"></span>
+      </div>
+      <div class="inputrow"><span class="label">Elastic Username: </span>
+        <input class="inputbox" id="elastic_username" placeholder="Elastic username you created (ds2user)"></span>
+      </div>
+      <div class="inputrow"><span class="label">Elastic Password: </span><input class="inputbox" id="elastic_password"
+          placeholder="Pasword for your elastic user"></span></div>
+      <div class="inputrow"><span class="label">Num Records: </span><input class="inputbox" id="num_records"
+          placeholder="How many records to load into elastic"></span></div>
+    </div>
+    <div class="button" onclick="sendBulkInfo();">Submit</div>
+  </div>
+  </div>
+  <div id="responseTextCell" class="response_text"></div>
+</body>
+
+</html>
