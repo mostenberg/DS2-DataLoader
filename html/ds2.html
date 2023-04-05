@@ -25,6 +25,7 @@
       border-style: solid;
       border-color: aqua;
       width: 590px;
+      border-radius: 20pt;
     }
 
     .label {
@@ -47,10 +48,39 @@
       width: fit-content;
       padding: 2pt;
       border-radius: 5pt;
+      
     }
 
     .response_text {
       font-size: x-small;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+      font-size: 12pt;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 450px;
+      background-color: dodgerblue;
+      color: #fff;
+      text-align: left;
+      font-size: 14px;
+      border-radius: 6px;
+      padding: 10px;
+      border-style: solid;
+      border-color: darkblue;
+
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
     }
   </style>
   <script>
@@ -67,32 +97,33 @@
 
     function sendBulkInfo() {
       console.log("InSend Bulk Info");
-      emptyValues=false;
-      hostname = document.domain;
-      if (hostname.length == 0) { hostname = "139-144-28-179.ip.linodeusercontent.com";} //During tesing use my tesing server
-      elasticHostname=document.getElementById("elastic_hostname").value;
-      if (elasticHostname.length==0){flashIt("elastic_hostname");emptyValues=true;}
-      username=document.getElementById("elastic_username").value;
-      if (username.length==0){flashIt("elastic_username");emptyValues=true;}
-      password=document.getElementById("elastic_password").value;
-      if (password.length==0){flashIt("elastic_password"); emptyValues=true;}
-      numRecords=document.getElementById("num_records").value;
-      if (numRecords.length==0){flashIt("numRecords");emptyValues=true;}
-      url="https://"+hostname+"/py/sendBulkDSData.py";
-      console.log("URL is: "+url);
-      const queryString=`elastichostname=${elasticHostname}&username=${username}&password=${password}&numrecords=${numRecords}`;
-      const postBody={hostname:hostname,username:username,password:password,numRecords:numRecords};
+      emptyValues = false;
+      hostname = document.domain; //Hostname of server to send api call to. (not the elastic hostname)
+      if (hostname.length == 0) { hostname = "139-144-28-179.ip.linodeusercontent.com"; } //During tesing use my tesing server
+
+      elasticHostname = document.getElementById("elastic_hostname").value;
+      if(elasticHostname.startsWith("https://")){elasticHostname=elasticHostname.slice(8);document.getElementById("elastic_hostname").value=elasticHostname;}
+      if(elasticHostname.includes('/')){elasticHostname=elasticHostname.split('/')[0];document.getElementById("elastic_hostname").value=elasticHostname;}
+      if (elasticHostname.length == 0) { flashIt("elastic_hostname"); emptyValues = true; } else { document.getElementById("elastic_hostname").style.backgroundColor = 'white'; }
+      username = document.getElementById("elastic_username").value;
+      if (username.length == 0) { flashIt("elastic_username"); emptyValues = true; } else { document.getElementById("elastic_username").style.backgroundColor = 'white'; }
+      password = document.getElementById("elastic_password").value;
+      if (password.length == 0) { flashIt("elastic_password"); emptyValues = true; } else { document.getElementById("elastic_password").style.backgroundColor = 'white'; }
+      numRecords = document.getElementById("num_records").value;
+      if (numRecords.length == 0) { flashIt("num_records"); emptyValues = true; } else { document.getElementById("num_records").style.backgroundColor = 'white'; }
+      url = "https://" + hostname + "/py/sendBulkDSData.py";
+      console.log("URL is: " + url);
+      const queryString = `elastichostname=${elasticHostname}&username=${username}&password=${password}&numrecords=${numRecords}`;
+      const postBody = { hostname: hostname, username: username, password: password, numRecords: numRecords };
       //console.log(postBody);
-      if(!emptyValues){sendXHRGet(url+"?"+queryString,"responseTextCell")} //If none of the values were empty, send the request.
+      if (!emptyValues) { sendXHRGet(url + "?" + queryString, "responseTextCell") } //If none of the values were empty, send the request.
 
     }
 
-    function flashIt(elementID) { 
-    myElement = document.getElementById(elementID); 
-    myElement.style.backgroundColor = 'red'; 
-    myElement.style.backgroundColor = 'white';
-    myElement.style.backgroundColor = 'red'; 
-    myElement.style.backgroundColor = 'green';  }
+    function flashIt(elementID) {
+      myElement = document.getElementById(elementID);
+      myElement.style.backgroundColor = 'pink';
+    }
   </script>
 </head>
 
@@ -106,16 +137,28 @@
     </div>
     <div class="form">
       <div class="inputrow">
-        <span class="label">Elastic rDNS: </span><input class="inputbox" id="elastic_hostname"
-          placeholder="Hostname (rDNS) of your elastic server"></span>
+        <span class="label">Elastic Hostname: </span><input class="inputbox" id="elastic_hostname"
+          placeholder="Hostname (rDNS) of your elastic server"><span class="tooltip"> &#x24d8
+          <span class="tooltiptext"> Hostname of the elastic server. You can find this in Linode by clicking on your
+            instance then the 'Network' tab. The hostname is then listed as the 'Reverse DNS' entry <br>Example:
+            <br>139-144-248-73.ip.linodeusercontent.com</span></span>
       </div>
       <div class="inputrow"><span class="label">Elastic Username: </span>
-        <input class="inputbox" id="elastic_username" placeholder="Elastic username you created (ds2user)"></span>
+        <input class="inputbox" id="elastic_username" placeholder="Elastic username you created (ds2user)">
+        <span class="tooltip"> &#x24d8 <span class="tooltiptext"> This is the username you entered in the field 'The
+            user to post data from Akamai DataStream 2. <br>Example: <br> ds2user</span></span>
       </div>
       <div class="inputrow"><span class="label">Elastic Password: </span><input class="inputbox" id="elastic_password"
-          placeholder="Pasword for your elastic user"></span></div>
+          placeholder="Pasword for your elastic user"></span><span class="tooltip"> &#x24d8 <span class="tooltiptext">
+            This is the password you entered in the field 'The password to post data from Akamai DataStream 2. Must
+            enter same password here. <br>Example: <br>
+            mypassword</span></span></div>
       <div class="inputrow"><span class="label">Num Records: </span><input class="inputbox" id="num_records"
-          placeholder="How many records to load into elastic"></span></div>
+          placeholder="How many records to load into elastic"></span><span class="tooltip"> &#x24d8 <span
+            class="tooltiptext">
+            Numeric value.<br>How many records to load into Elastic. Will be loaded randomly over past 24 hours. (Max 10000) <br>Example:
+            <br>
+            1000</span></span></div>
     </div>
     <div class="button" onclick="sendBulkInfo();">Submit</div>
   </div>
