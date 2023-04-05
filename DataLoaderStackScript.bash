@@ -89,6 +89,7 @@ wget https://raw.githubusercontent.com/mostenberg/DS2-DataLoader/master/py/singl
 echo "dummy data will be overwritten at first run" > /var/www/py/bulkFile.txt
 #Make apache the owner of the file so it can write the bulk send data to the file from the python scripts
 chgrp www-data /var/www/py/bulkFile.txt 
+chmod g+w /var/www/py/bulkFile.txt
 
 #Download the data loader web page from github
 cd /var/www/html
