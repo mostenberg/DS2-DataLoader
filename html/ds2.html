@@ -102,7 +102,8 @@
       if (hostname.length == 0) { hostname = "139-144-28-179.ip.linodeusercontent.com"; } //During tesing use my tesing server
 
       elasticHostname = document.getElementById("elastic_hostname").value;
-      if(elasticHostname.startsWith("https://")){elasticHostname=elasticHostname.slice(8);document.getElementById("elastic_hostname").value=elasticHostname;}
+      if(elasticHostname.startsWith("https://")){elasticHostname=elasticHostname.slice(8,-1);document.getElementById("elastic_hostname").value=elasticHostname;}
+      if(elasticHostname.startsWith("http://")){elasticHostname=elasticHostname.slice(7,-1);document.getElementById("elastic_hostname").value=elasticHostname;}
       if(elasticHostname.includes('/')){elasticHostname=elasticHostname.split('/')[0];document.getElementById("elastic_hostname").value=elasticHostname;}
       if (elasticHostname.length == 0) { flashIt("elastic_hostname"); emptyValues = true; } else { document.getElementById("elastic_hostname").style.backgroundColor = 'white'; }
       username = document.getElementById("elastic_username").value;
