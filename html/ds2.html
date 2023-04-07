@@ -5,7 +5,7 @@
   <style>
     .main {
       text-align: center;
-      width: 600px;
+      width: 850px;
       align-items: center;
       align-content: center;
       font-family: Arial, Helvetica, sans-serif;
@@ -24,8 +24,10 @@
       border: 3px;
       border-style: solid;
       border-color: aqua;
-      width: 590px;
+      width: 800px;
       border-radius: 20pt;
+      float:right;
+      padding:10px;
     }
 
     .label {
@@ -34,11 +36,12 @@
 
     .inputrow {
       padding: 5px;
+      float:right;
     }
 
     .inputbox {
       font-size: smaller;
-      width: 250px;
+      width: 400px;
     }
 
     .button {
@@ -46,8 +49,10 @@
       border-style: solid;
       border-width: 2pt;
       width: fit-content;
-      padding: 2pt;
+      padding: 4pt;
       border-radius: 5pt;
+      float: right;
+      margin: 5pt;
       
     }
 
@@ -105,6 +110,8 @@
       if(elasticHostname.startsWith("https://")){elasticHostname=elasticHostname.slice(8,-1);document.getElementById("elastic_hostname").value=elasticHostname;}
       if(elasticHostname.startsWith("http://")){elasticHostname=elasticHostname.slice(7,-1);document.getElementById("elastic_hostname").value=elasticHostname;}
       if(elasticHostname.includes('/')){elasticHostname=elasticHostname.split('/')[0];document.getElementById("elastic_hostname").value=elasticHostname;}
+      if(elasticHostname.endsWith(':5601')){elasticHostname=elasticHostname.split(':')[0];document.getElementById("elastic_hostname").value=elasticHostname;}
+
       if (elasticHostname.length == 0) { flashIt("elastic_hostname"); emptyValues = true; } else { document.getElementById("elastic_hostname").style.backgroundColor = 'white'; }
       username = document.getElementById("elastic_username").value;
       if (username.length == 0) { flashIt("elastic_username"); emptyValues = true; } else { document.getElementById("elastic_username").style.backgroundColor = 'white'; }
@@ -144,12 +151,12 @@
             instance then the 'Network' tab. The hostname is then listed as the 'Reverse DNS' entry <br>Example:
             <br>139-144-248-73.ip.linodeusercontent.com</span></span>
       </div>
-      <div class="inputrow"><span class="label">Elastic Username: </span>
+      <div class="inputrow"><span class="label">Elastic Username for Posting Data: </span>
         <input class="inputbox" id="elastic_username" placeholder="Elastic username you created (ds2user)">
         <span class="tooltip"> &#x24d8 <span class="tooltiptext"> This is the username you entered in the field 'The
             user to post data from Akamai DataStream 2. <br>Example: <br> ds2user</span></span>
       </div>
-      <div class="inputrow"><span class="label">Elastic Password: </span><input class="inputbox" id="elastic_password"
+      <div class="inputrow"><span class="label">Elastic Password for Posting Data: </span><input type="password" class="inputbox" id="elastic_password"
           placeholder="Pasword for your elastic user"></span><span class="tooltip"> &#x24d8 <span class="tooltiptext">
             This is the password you entered in the field 'The password to post data from Akamai DataStream 2. Must
             enter same password here. <br>Example: <br>
