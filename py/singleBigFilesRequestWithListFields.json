@@ -51,14 +51,12 @@
     "POST"
   ],
   "reqPath": [
-    "/path1/path2/file.ext",
-    "/img/dog.jpg",
-    "/img/cat.jpg",
-    "/css/style12.css",
-    "/css/style3.css",
-    "/",
-    "/api/orders",
-    "/api/userinfo"
+    "/my/animated/file.gif",
+    "/fancy/movie.mpg",
+    "/big/file/movie.mpg",
+    "/another/animation.gif",
+    "/fancy/transition.gif",
+    "/movie/content/trailer.mpg"
   ],
   "reqPort": "443",
   "rspContentLen": "5000",
@@ -69,7 +67,7 @@
   "objSize": "484",
   "uncompressedSize": "484",
   "overheadBytes": "232",
-  "totalBytes": ["1242", "3452", "2934", "2319", "4572", "2343"],
+  "totalBytes": ["345632", "384249", "384740", "284335", "273945"],
   "queryStr": "param=value",
   "accLang": "en-US",
   "cookie": "cookie-content",

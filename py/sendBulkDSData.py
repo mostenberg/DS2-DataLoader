@@ -45,7 +45,7 @@ print('Content-Type: text/html; charset=utf-8\n')
 
 paramDict={}
 for param in params:
-    print("name:"+param[0]+" value:"+param[1])
+    #print("name:"+param[0]+" value:"+param[1])
     paramDict[param[0]]=param[1]
 
 elasticurl="http://"+paramDict["elastichostname"]+":9200/datastream2/_bulk"
@@ -62,12 +62,13 @@ myJsonData=myJsonData.replace("\n","") #Strip any newlines
 print("\n******** JSON Data:\n")
 print (myJsonData)
 print("\n********\n")
+
 myResponse=sendDataToElastic(elasticurl,username,password,numRecords,myJsonData)
 print("\n****RESPONSE: \n")
 print (myResponse)
 f.close
 
-f = open("singleRequestWithListFields.json","r") # Read the doc from a file
+f = open("singleBigFilesRequestWithListFields.json","r") # Read the doc from a file
 myJsonData = f.read(-1) #Read the entire file into sendBody variable
 myJsonData=myJsonData.replace("\n","") #Strip any newlines
 print("\n***JSON DATA2\n")
