@@ -79,4 +79,14 @@ myResponse=sendDataToElastic(elasticurl,username,password,numRecords,myJsonData)
 print (myResponse)
 print("\n********\n")
 
+f = open("sampleErrorDataWithListFields.json","r") # Read the doc from a file
+myJsonData = f.read(-1) #Read the entire file into sendBody variable
+myJsonData=myJsonData.replace("\n","") #Strip any newlines
+print("\n***JSON DATA2\n")
+print (myJsonData)
+print("\n***RESPONSE 2\n")
+
+myResponse=sendDataToElastic(elasticurl,username,password,numRecords,myJsonData)
+print (myResponse)
+print("\n********\n")
 f.close
