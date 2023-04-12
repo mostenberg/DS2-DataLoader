@@ -4,7 +4,7 @@
   "cp": "123456",
   "reqId": "1239f220",
   "reqTimeSec": "1678859500.171",
-  "bytes": "4995",
+  "bytes": ["4995", "673942", "48573", "485763", "273745", "273998", "374655"],
   "cliIP": [
     "128.147.28.68",
     "121.212.45.92",
@@ -63,7 +63,15 @@
   "rspContentType": ["text/html", "text/css"],
   "UA": "Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_14_3%29",
   "tlsOverheadTimeMSec": "0",
-  "tlsVersion": "TLSv1",
+  "tlsVersion": [
+    "TLSv1.3",
+    "TLSv1.3",
+    "TLSv1.3",
+    "TLSv1.3",
+    "TLSv1.3",
+    "TLSv1.3",
+    "TLSv1.2"
+  ],
   "objSize": "484",
   "uncompressedSize": "484",
   "overheadBytes": "232",
@@ -81,7 +89,21 @@
   "transferTimeMSec": "125",
   "dnsLookupTimeMSec": "50",
   "lastByte": "1",
-  "cacheStatus": "1",
+  "cacheStatus": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "0",
+    "0",
+    "0"
+  ],
   "cacheable": "1",
   "edgeIP": "23.50.51.173",
   "country": [

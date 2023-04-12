@@ -81,7 +81,7 @@
   "transferTimeMSec": "125",
   "dnsLookupTimeMSec": "50",
   "lastByte": "1",
-  "cacheStatus": "1",
+  "cacheStatus": ["1", "1", "1", "1", "1", "1", "1", "0", "0", "0"],
   "cacheable": "1",
   "edgeIP": "23.50.51.173",
   "country": ["RU", "RU", "KP", "RU", "RU", "KP"],
