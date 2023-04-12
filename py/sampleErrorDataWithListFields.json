@@ -70,7 +70,7 @@
   "totalBytes": ["345632", "384249", "384740", "284335", "273945"],
   "queryStr": "username=fred or 1=1",
   "accLang": "en-US",
-  "cookie": "cookie-content",
+  "cookie": ["cookie-content", "korovka", "sormovskoe", "polet"],
   "range": "37334-42356",
   "referer": "https%3A%2F%2Ftest.referrer.net%2Fen-US%2Fdocs%2FWeb%2Ftest",
   "xForwardedFor": "8.47.28.38",
