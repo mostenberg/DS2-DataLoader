@@ -472,39 +472,81 @@ POST /datastream2/_search
 Sample response:
 
 ```
-
-POST /datastream2/_search
 {
-  "size": 0,
-  "aggs": {
+  "took": 1,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 3002,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": []
+  },
+  "aggregations": {
     "offload_by_country": {
-      "terms": {
-        "field": "country",
-        "size": 10
-      },
-      "aggs": {
-        "cache_hits": {
-          "filter": {
-            "term": {
-              "cacheStatus": "1"
-            }
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 1745,
+      "buckets": [
+        {
+          "key": "RU",
+          "doc_count": 694,
+          "cache_hits": {
+            "doc_count": 491
+          },
+          "edge_hits": {
+            "value": 694
+          },
+          "offload": {
+            "value": 70.7492795389049
           }
         },
-        "edge_hits": {
-          "value_count": {
-            "field": "cacheStatus"
+        {
+          "key": "KP",
+          "doc_count": 350,
+          "cache_hits": {
+            "doc_count": 235
+          },
+          "edge_hits": {
+            "value": 350
+          },
+          "offload": {
+            "value": 67.14285714285714
           }
         },
-        "offload": {
-          "bucket_script": {
-            "buckets_path": {
-              "cacheHits": "cache_hits._count",
-              "edgeHits": "edge_hits.value"
-            },
-            "script": "params.cacheHits > 0 ? params.cacheHits / params.edgeHits * 100 : 0"
+        {
+          "key": "AT",
+          "doc_count": 112,
+          "cache_hits": {
+            "doc_count": 93
+          },
+          "edge_hits": {
+            "value": 112
+          },
+          "offload": {
+            "value": 83.03571428571429
+          }
+        },
+        {
+          "key": "FI",
+          "doc_count": 99,
+          "cache_hits": {
+            "doc_count": 84
+          },
+          "edge_hits": {
+            "value": 99
+          },
+          "offload": {
+            "value": 84.84848484848484
           }
         }
-      }
+      ]
     }
   }
 }
