@@ -280,14 +280,14 @@ Sample Response:
 
 ---
 
-### Get count of totalBytes per country (limited to 4 countries)
+### Get count of requests per country (limited to 4 countries)
 
 ```
 GET datastream2/_search
 {
   "size": "0",
   "aggs": {
-    "bytes_per_country": {
+    "requests_per_country": {
       "terms": {
         "field": "country",
         "size": 4
@@ -346,7 +346,7 @@ Sample response:
 
 ---
 
-### Get sum of totalBytes per country limited to 4 countries
+### Get sum of totalBytes aggregated by country limited to 4 countries
 
 ```
 GET datastream2/_search
@@ -676,4 +676,30 @@ Sample response:
     }
   }
 }
+```
+
+## Sample SQL Queries
+
+In ElasticSearch, you can also do SQL queries against the data.
+
+### Count of requests aggregated by file extension
+
+```
+POST /_sql?format=txt
+{
+  "query": "SELECT iif(locate('.',right(reqPath,5))>0,right(reqPath,4),'none') as extension,count(*) as count FROM datastream2 group by extension order by count desc limit 10"
+}
+```
+
+Sample Response:
+
+```
+   extension   |     count
+---------------+---------------
+.mpg           |2026
+.gif           |1974
+none           |778
+.jpg           |499
+.css           |487
+.ext           |236
 ```
