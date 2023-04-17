@@ -1,7 +1,16 @@
 {
   "version": 1,
   "streamId": "12345",
-  "cp": "123456",
+  "cp": [
+    "123456",
+    "34239",
+    "293051",
+    "3495022",
+    "3746382",
+    "138472",
+    "484760",
+    "2864855"
+  ],
   "reqId": ["1239f220", "1347c341", "37139d3", "294a432"],
   "reqTimeSec": "1678859500.171",
   "bytes": "4995",
@@ -30,7 +39,12 @@
     "200"
   ],
   "proto": "HTTPS",
-  "reqHost": "test.hostname.net",
+  "reqHost": [
+    "test.hostname.net",
+    "staging.qa.mysite.com",
+    "dev.mysite.com",
+    "www.mysite.com"
+  ],
   "reqMethod": [
     "GET",
     "GET",
