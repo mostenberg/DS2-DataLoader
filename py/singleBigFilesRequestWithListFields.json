@@ -51,12 +51,12 @@
     "POST"
   ],
   "reqPath": [
-    "/my/animated/file.gif",
-    "/fancy/movie.mpg",
-    "/big/file/movie.mpg",
-    "/another/animation.gif",
-    "/fancy/transition.gif",
-    "/movie/content/trailer.mpg"
+    "/my/animated/file.gif?CMCD=bl%3D32700%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D57000%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
+    "/fancy/movie.mpg?CMCD=bl%3D40900%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D61900%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
+    "/big/file/movie.mpg?CMCD=bl%3D48800%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D63700%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
+    "/another/animation.gif?CMCD=bl%3D56800%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D65100%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
+    "/fancy/transition.gifCMCD=bl%3D64900%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D65900%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
+    "/movie/content/trailer.mpg?CMCD=bl%3D68100%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D66600%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755"
   ],
   "reqPort": "443",
   "rspContentLen": "5000",
