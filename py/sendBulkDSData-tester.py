@@ -1,4 +1,6 @@
-from test import *
+#!/usr/bin/python3
+
+from sendBulkDSData import *
 import json
 
 
@@ -62,4 +64,4 @@ jsonData = """
 
 """
 print("JSon data is: "+jsonData)
-sendDataToElastic(url, username, password, count, jsonData)
+y = sendDataToElastic(url, username, password, count, jsonData)
