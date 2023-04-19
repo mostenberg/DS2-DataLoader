@@ -87,6 +87,17 @@
     .tooltip:hover .tooltiptext {
       visibility: visible;
     }
+
+    table{
+      border-width: 2pt;
+      border-style: solid;
+    }
+    
+    td{
+      border-width:1pt;
+      border-style:inset;
+    }
+
   </style>
   <script>
     function sendXHRGet(url, responseTextCell) {
@@ -136,8 +147,23 @@
 </head>
 
 <body>
+  <h1>Akamai Connected Cloud Workshop</h1>
+  <h2> Datastream2 + ELK</h2>
   <div class="main">
-    <div class="banner">DataStream2 Loader</div>
+    <h3>Assets:</h3>
+    <table>
+      <tr class="header"><td>Name</td><td>Description</td><td>Link</td></tr>
+      <tr><td>GitHub Repository</td><td>Github repository with all technical assets</td><td><a href="https://github.com/mostenberg/DS2-DataLoader" target="0">here</a></td></tr>
+      <tr><td>Section 1 Overview</td><td>Steps to setup a LAMP server using stack scripts</td><td><a href="https://github.com/mostenberg/DS2-DataLoader/blob/master/instructions/section1.md" target="0">here</a></td></tr>
+      <tr><td>Section 2 Overview</td><td>Steps to setup an ELK server using stack scripts</td><td><a href="https://github.com/mostenberg/DS2-DataLoader/blob/master/instructions/section2.md" target="0">here</a></td></tr>
+      <tr><td>Section 3 Overview</td><td>Load data into ELK server then review dashboards</td><td><a href="https://github.com/mostenberg/DS2-DataLoader/blob/master/instructions/section3.md" target="0">here</a></td></tr>
+      <tr><td>Section 3b</td><td>Video on how to setup Datastream2 to send data to an ELK server (10 min) </td><td><a href="https://www.youtube.com/watch?v=v2rZtSSjUDE" target="0">here</a></td></tr>
+      <tr><td>Section 3c </td><td>Additional examples of queries you can run from the ELK 'Dev Tools' section</td><td><a href="https://github.com/mostenberg/DS2-DataLoader/blob/master/SampleElasticSearchQueries.md" target="0">here</a></td></tr>
+      <tr><td>Section 4 Overview</td><td>Install Linode Command Line Interface and use it to create users and servers</td><td><a href="https://github.com/mostenberg/DS2-DataLoader/blob/master/instructions/section4.md" target="0">here</a></td></tr>
+    </table>
+    <br>
+    <br>
+    <div class="banner">DataStream2 Data Loader</div>
     <div class="explanation">
       This form will allow you to send data to your elastic instance to
       simulate the type of data that Akamai will send when DataStream 2 is
