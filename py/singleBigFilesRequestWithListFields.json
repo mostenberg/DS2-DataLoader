@@ -56,7 +56,11 @@
     "/big/file/movie.mpg?CMCD=bl%3D48800%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D63700%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
     "/another/animation.gif?CMCD=bl%3D56800%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D65100%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
     "/fancy/transition.gifCMCD=bl%3D64900%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D65900%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
-    "/movie/content/trailer.mpg?CMCD=bl%3D68100%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D66600%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755"
+    "/movie/content/trailer.mpg?CMCD=bl%3D68100%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D66600%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
+    "/delivery/94/88/9488592c-0671-49ba-b1c1-d908418a629a/experience-the-edge_8000k_4/experience-the-edge_8000k_4_00000009.ts?CMCD=bl%3D68100%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D66600%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
+    "/delivery/94/88/9488592c-0671-49ba-b1c1-d908418a629a/experience-the-edge_8000k_4/experience-the-edge_8000k_4_00000010.ts?CMCD=bl%3D68100%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D67800%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
+    "/delivery/94/88/9488592c-0671-49ba-b1c1-d908418a629a/experience-the-edge_8000k_4/experience-the-edge_8000k_4_00000012.ts?CMCD=bl%3D68100%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D9009%2Cmtp%3D71000%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755",
+    "delivery/94/88/9488592c-0671-49ba-b1c1-d908418a629a/experience-the-edge_8000k_4/experience-the-edge_8000k_4_00000014.ts?CMCD=bl%3D68000%2Cbr%3D7051%2Ccid%3D%22123-456%22%2Cd%3D3003%2Cmtp%3D71400%2Cot%3Dav%2Csf%3Dh%2Csid%3D%22b248658d-1d1a-4039-91d0-8c08ba597da5%22%2Ctb%3D7050755"
   ],
   "reqPort": "443",
   "rspContentLen": "5000",
