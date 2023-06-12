@@ -1,4 +1,4 @@
-# DataStream-DataLoader2
+# DS2-ELK-Linode-Workshop
 
 ## Background
 
