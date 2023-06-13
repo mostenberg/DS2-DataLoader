@@ -10,7 +10,7 @@ This document contains some sample queries which will help illustrate how to use
 
 ## Sample DataStream2 Data
 
-For each request sent to an Akamai Edge server, Datastream2 will send back an object in compressed or JSON format with data about the request. A sample response in JSON format is here:
+For each request sent to an Akamai Edge server, Datastream2 will send back an object in compressed or JSON format with data about the request. A sample datastream 2 log line in JSON format is here:
 
 ```
 {
